@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: #0f1226;
+  background: var(--color-bg-offset);
   font-family: "Poppins";
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const ContainerImg = styled.img``;
 
 export const ContainerContent = styled.div`
-  background-color: "#0f1226";
+  background-color: "var(--color-bg-offset)";
 `;
 
 export const ContainerHeader = styled.h1``;

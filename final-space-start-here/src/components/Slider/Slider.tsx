@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 // Components
-import SliderItem from "./SliderItem";
+import SliderItem from "./Slider-Item";
 // Styles
-import { StyledSliderWrapper, StyledSlider } from "./SliderStyles";
+import * as st from "./Slider.Styled";
 // Types
 type SliderProps = {
   children?: any;
@@ -13,10 +13,13 @@ type SliderProps = {
 };
 
 const numberOfSlides = (maxVisibleSlides: number, windowWidth: number) => {
-  if (windowWidth > 1200) return maxVisibleSlides;
-  if (windowWidth > 992) return 4;
-  if (windowWidth > 768) return 3;
-  return 2;
+  if (windowWidth > 1920) return maxVisibleSlides;
+  if (windowWidth > 1600) return 7;
+  if (windowWidth > 1280) return 6;
+  if (windowWidth > 1000) return 4;
+  if (windowWidth > 700) return 3;
+  if (windowWidth > 500) return 2;
+  return 1.5;
 };
 
 const Slider: React.FC<SliderProps> = ({
@@ -88,8 +91,11 @@ const Slider: React.FC<SliderProps> = ({
   };
 
   return (
-    <StyledSliderWrapper zoomFactor={zoomFactor} visibleSlides={visibleSlides}>
-      <StyledSlider
+    <st.StyledSliderWrapper
+      zoomFactor={zoomFactor}
+      visibleSlides={visibleSlides}
+    >
+      <st.StyledSlider
         visibleSlides={visibleSlides}
         transformValue={transformValue}
         zoomFactor={zoomFactor}
@@ -111,7 +117,7 @@ const Slider: React.FC<SliderProps> = ({
             {child}
           </SliderItem>
         ))}
-      </StyledSlider>
+      </st.StyledSlider>
       {currentPage > 0 && (
         <div className="button-wrapper back">
           <button
@@ -132,7 +138,7 @@ const Slider: React.FC<SliderProps> = ({
           </button>
         </div>
       )}
-    </StyledSliderWrapper>
+    </st.StyledSliderWrapper>
   );
 };
 

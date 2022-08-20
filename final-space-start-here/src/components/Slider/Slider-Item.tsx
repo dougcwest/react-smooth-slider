@@ -1,6 +1,7 @@
-import React from 'react';
-// Styles
-import { StyledSliderItem } from './SliderItemStyles';
+import React from "react";
+import { NFT } from "../../App";
+
+import * as st from "./Slider-Item.Styled";
 
 type SliderItemProps = {
   slideClass: string;
@@ -10,6 +11,7 @@ type SliderItemProps = {
   callbackOut: () => void;
   slideMargin: number;
   visibleSlides: number;
+  nft?: NFT;
 };
 
 const SliderItem: React.FC<SliderItemProps> = ({
@@ -20,9 +22,10 @@ const SliderItem: React.FC<SliderItemProps> = ({
   id,
   callback,
   callbackOut,
-  children
+  children,
+  nft,
 }) => (
-  <StyledSliderItem
+  <st.StyledSliderItem
     zoomFactor={zoomFactor}
     slideMargin={slideMargin}
     visibleSlides={visibleSlides}
@@ -30,8 +33,8 @@ const SliderItem: React.FC<SliderItemProps> = ({
     onMouseOver={() => callback(id)}
     onMouseOut={callbackOut}
   >
-      {children}
-  </StyledSliderItem>
+    {children}
+  </st.StyledSliderItem>
 );
 
 export default SliderItem;

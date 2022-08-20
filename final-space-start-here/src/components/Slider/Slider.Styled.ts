@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledSliderItem } from "./SliderItemStyles";
+import { StyledSliderItem } from "./Slider-Item.Styled";
 
 type SliderWrapperProps = {
   zoomFactor: number;
@@ -17,15 +17,18 @@ type SliderProps = {
 
 export const StyledSliderWrapper = styled.div<SliderWrapperProps>`
   overflow: hidden;
+  margin-top: -20px;
   position: relative;
-  background: #0f1226;
-  padding: ${(props) => (props.zoomFactor / props.visibleSlides) * 0.7 + "%"} 0;
+  background: var(--color-bg-dark);
+  height: ${(props) => (props.visibleSlides === 3 ? "330px" : "300px")};
+  padding: ${(props) => (props.zoomFactor / props.visibleSlides) * 0.7 + "%"};
 
   .button-wrapper {
     position: absolute;
-    width: 46px;
-    height: 101%;
-    top: -2px;
+    background: none;
+    top: 0;
+    width: 55px;
+    height: 100%;
     padding: ${(props) => props.zoomFactor / 7 + "%"} 0;
     box-sizing: border-box;
   }
@@ -63,7 +66,7 @@ export const StyledSliderWrapper = styled.div<SliderWrapperProps>`
 
 export const StyledSlider = styled.div<SliderProps>`
   display: flex;
-  padding: 0 55px;
+  padding: 0;
   transition: transform ${(props) => props.pageTransition}ms ease;
 
   :hover ${StyledSliderItem} {

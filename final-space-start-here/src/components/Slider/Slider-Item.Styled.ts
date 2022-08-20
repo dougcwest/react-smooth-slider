@@ -22,7 +22,7 @@ export const StyledSliderItem = styled.div<Props>`
   flex: 0 0
     calc(
       100% / ${(props) => props.visibleSlides} -
-        ${(props) => props.slideMargin * 2}px
+        ${(props) => props.slideMargin * 3}px
     );
 
   img {
@@ -55,4 +55,53 @@ export const StyledSliderItem = styled.div<Props>`
       transform: translateX(0%) !important;
     }
   }
+`;
+
+export const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  position: absolute;
+  margin-top: 80%;
+  z-index: 5;
+  background: var(--color-bg-offset);
+  border-radius: 0 0 20px 20px;
+  width: 100%;
+  max-width: 300px;
+  padding: 4px;
+  box-sizing: border-box;
+`;
+
+export const Title = styled.h1`
+  color: var(--color-white);
+  font-family: "Poppins";
+  font-weight: 200;
+  font-size: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+`;
+
+export const BinanceContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: var(--color-white);
+    font-family: "Poppins", sans-serif;
+  }
+
+  img {
+    height: 50px;
+    width: 52px;
+  }
+`;
+
+export const BinanceImg = styled.img`
+  height: 5px;
+  width: 100%;
 `;
