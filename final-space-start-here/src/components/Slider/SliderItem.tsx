@@ -1,6 +1,10 @@
 import React from "react";
 // Styles
-import { StyledSliderItem, SliderItemReflection } from "./SliderItemStyles";
+import {
+  StyledSliderItem,
+  SliderItemReflection,
+  Overlay,
+} from "./SliderItemStyles";
 
 type SliderItemProps = {
   slideClass: string;
@@ -32,6 +36,10 @@ const SliderItem: React.FC<SliderItemProps> = ({
       onMouseOut={callbackOut}
     >
       {children}
+      <SliderItemReflection>
+        <Overlay></Overlay>
+        {children}
+      </SliderItemReflection>
     </StyledSliderItem>
   </>
 );

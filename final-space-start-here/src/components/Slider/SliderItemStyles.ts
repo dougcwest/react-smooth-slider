@@ -10,7 +10,6 @@ type Props = {
 export const StyledSliderItem = styled.div<Props>`
   margin: 0 ${(props) => props.slideMargin}px;
   transition: transform 500ms ease;
-  cursor: pointer;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -18,6 +17,7 @@ export const StyledSliderItem = styled.div<Props>`
   transform: scale(1);
   user-select: none;
   position: relative;
+  box-shadow: 0px 50px 70px rgba(0, 0, 0, 0.5);
 
   flex: 0 0
     calc(
@@ -56,8 +56,24 @@ export const StyledSliderItem = styled.div<Props>`
   }
 `;
 
-export const SliderItemReflection = styled(StyledSliderItem)`
+export const SliderItemReflection = styled.div`
   position: absolute;
-  bottom: -100%;
+  bottom: -61.5%;
   transform: scaleY(-1);
+  opacity: 0.6;
+  height: 200px;
+  overflow: hidden;
+  filter: blur(1px);
+
+  video {
+    margin-top: -125px;
+  }
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  height: 201px;
+  width: 101%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), black);
+  z-index: 2;
 `;

@@ -19,11 +19,12 @@ export const StyledSliderWrapper = styled.div<SliderWrapperProps>`
   overflow: hidden;
   position: relative;
   background: #000000;
+  height: 900px;
   padding: ${(props) => (props.zoomFactor / props.visibleSlides) * 0.7 + "%"} 0;
 
   .button-wrapper {
     position: absolute;
-    width: 46px;
+    width: 48px;
     height: 101%;
     top: -2px;
     padding: ${(props) => props.zoomFactor / 7 + "%"} 0;
@@ -36,7 +37,7 @@ export const StyledSliderWrapper = styled.div<SliderWrapperProps>`
     border: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 50%;
     color: #fff;
     font-size: 3rem;
     font-weight: 800;
@@ -63,7 +64,7 @@ export const StyledSliderWrapper = styled.div<SliderWrapperProps>`
 
 export const StyledSlider = styled.div<SliderProps>`
   display: flex;
-  padding: 55px;
+  padding: 0 55px;
   transition: transform ${(props) => props.pageTransition}ms ease;
 
   :hover ${StyledSliderItem} {
