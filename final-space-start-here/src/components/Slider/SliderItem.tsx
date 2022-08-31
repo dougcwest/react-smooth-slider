@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 // Styles
-import { StyledSliderItem } from './SliderItemStyles';
+import { StyledSliderItem, SliderItemReflection } from "./SliderItemStyles";
 
 type SliderItemProps = {
   slideClass: string;
@@ -20,18 +20,20 @@ const SliderItem: React.FC<SliderItemProps> = ({
   id,
   callback,
   callbackOut,
-  children
+  children,
 }) => (
-  <StyledSliderItem
-    zoomFactor={zoomFactor}
-    slideMargin={slideMargin}
-    visibleSlides={visibleSlides}
-    className={slideClass}
-    onMouseOver={() => callback(id)}
-    onMouseOut={callbackOut}
-  >
+  <>
+    <StyledSliderItem
+      zoomFactor={zoomFactor}
+      slideMargin={slideMargin}
+      visibleSlides={visibleSlides}
+      className={slideClass}
+      onMouseOver={() => callback(id)}
+      onMouseOut={callbackOut}
+    >
       {children}
-  </StyledSliderItem>
+    </StyledSliderItem>
+  </>
 );
 
 export default SliderItem;

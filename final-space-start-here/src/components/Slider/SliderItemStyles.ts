@@ -10,7 +10,6 @@ type Props = {
 export const StyledSliderItem = styled.div<Props>`
   margin: 0 ${(props) => props.slideMargin}px;
   transition: transform 500ms ease;
-  border-radius: 20px;
   cursor: pointer;
   width: 100%;
   height: 100%;
@@ -18,6 +17,7 @@ export const StyledSliderItem = styled.div<Props>`
   display: flex;
   transform: scale(1);
   user-select: none;
+  position: relative;
 
   flex: 0 0
     calc(
@@ -25,10 +25,9 @@ export const StyledSliderItem = styled.div<Props>`
         ${(props) => props.slideMargin * 2}px
     );
 
-  img {
+  video {
     height: 100%;
     width: 100%;
-    border-radius: 1.5vw;
     box-sizing: border-box;
   }
 
@@ -55,4 +54,10 @@ export const StyledSliderItem = styled.div<Props>`
       transform: translateX(0%) !important;
     }
   }
+`;
+
+export const SliderItemReflection = styled(StyledSliderItem)`
+  position: absolute;
+  bottom: -100%;
+  transform: scaleY(-1);
 `;

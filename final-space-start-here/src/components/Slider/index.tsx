@@ -14,9 +14,9 @@ type SliderProps = {
 
 const numberOfSlides = (maxVisibleSlides: number, windowWidth: number) => {
   if (windowWidth > 1200) return maxVisibleSlides;
-  if (windowWidth > 992) return 4;
+  if (windowWidth > 992) return 3;
   if (windowWidth > 768) return 3;
-  return 2;
+  return 1.5;
 };
 
 const Slider: React.FC<SliderProps> = ({
